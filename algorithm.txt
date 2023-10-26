@@ -1,0 +1,3 @@
+Backtracking:
+- a problem is solved by a series of decision -> possibly wrong decision -> backtrack to where the decision is made -> and try someting else
+- Recursive solutions are a natural fit for backtracking, tricky to see the backtracking in recursive solutions
