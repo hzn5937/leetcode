@@ -1,4 +1,4 @@
-def test(n):
+def generate_parentheses(n):
     stack = []
     result = [] 
 
@@ -21,6 +21,6 @@ def test(n):
     return result
 
 
-print(test(1))
-print(test(2))
-print(test(3))
+print(generate_parentheses(1))
+print(generate_parentheses(2))
+print(generate_parentheses(3))
