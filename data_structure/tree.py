@@ -1,3 +1,5 @@
+from collections import deque
+
 class Node:
     def __init__(self, value):
         self.left = None
@@ -77,19 +79,22 @@ def postorder(root):
 
 # Breadth First Search (BFS)
 def levelorder(root):
-    if not root:
-        return
-    queue = []
-    queue.append(root)
+    queue = deque()
+
+    if root:
+        queue.append(root)
+    
+    level = 0
     while len(queue) > 0:
-        print(queue[0].value, end = " ")
-        node = queue.pop(0)
-        if node.left:
-            queue.append(node.left)
-        if node.right:
-            queue.append(node.right)
-
-
+        print(f"level: {level}")
+        for i in range(len(queue)):
+            curr = queue.popleft()
+            print(curr.val)
+            if curr.left:
+                queue.append(curr.left)
+            if curr.right:
+                queue.append(curr.right)
+        level += 1
 root = Node(4)
 insert(root, 3)
 insert(root,2)
