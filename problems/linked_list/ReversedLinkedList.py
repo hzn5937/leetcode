@@ -8,6 +8,7 @@ class Solution:
         cur = head
         prev = None
         
+        # adjust pointer at prev variable and using temp to move to next Node without a link
         while (cur):
             temp = cur.next
             cur.next = prev
