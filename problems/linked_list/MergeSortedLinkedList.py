@@ -24,5 +24,5 @@ class Solution:
             dummyNode.next = list2
             dummyNode = dummyNode.next
             list2 = list2.next
-        return returnNode
+        return returnNode.next
         
