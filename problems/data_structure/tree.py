@@ -86,26 +86,27 @@ def levelorder(root):
     
     level = 0
     while len(queue) > 0:
-        print(f"level: {level}")
+        print("level: ", level)
         for i in range(len(queue)):
             curr = queue.popleft()
-            print(curr.val)
+            print(curr.value)
             if curr.left:
                 queue.append(curr.left)
             if curr.right:
                 queue.append(curr.right)
         level += 1
+        
 root = Node(4)
 insert(root, 3)
 insert(root,2)
 insert(root, 6)
 insert(root,5)
 insert(root, 7) 
-print("inorder traversal:")
-inorder(root)
-print("\npreorder traversal:")
-preorder(root)
-print("\npostorder traversal:")
-postorder(root)
+# print("inorder traversal:")
+# inorder(root)
+# print("\npreorder traversal:")
+# preorder(root)
+# print("\npostorder traversal:")
+# postorder(root)
 print("\nlevelorder traversal:")
 levelorder(root)
