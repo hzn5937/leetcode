@@ -15,7 +15,7 @@ def get_minimum_node(root):
 def remove(root, value):
     if not root:
         return None
-    
+
     if value < root.value:
         root.left = remove(root.left, value)
     elif value > root.value:
@@ -36,7 +36,7 @@ def remove(root, value):
 def insert(root, value):
     if not root:
         return Node(value)
-    
+
     if value < root.value:
         root.left = insert(root.left, value)
     elif value > root.value:
@@ -46,7 +46,7 @@ def insert(root, value):
 def search(root, value):
     if not root:
         return False
-    
+
     if value < root.value:
         return search(root.left, value)
     elif value > root.value:
@@ -57,7 +57,7 @@ def search(root, value):
 # traversal
 # Depth First Search (DFS)
 def inorder(root):
-    if not root: 
+    if not root:
         return
     inorder(root.left)
     print(root.value, end = " ")
@@ -83,7 +83,7 @@ def levelorder(root):
 
     if root:
         queue.append(root)
-    
+
     level = 0
     while len(queue) > 0:
         print("level: ", level)
@@ -95,18 +95,18 @@ def levelorder(root):
             if curr.right:
                 queue.append(curr.right)
         level += 1
-        
+
 root = Node(4)
 insert(root, 3)
 insert(root,2)
 insert(root, 6)
 insert(root,5)
-insert(root, 7) 
-# print("inorder traversal:")
-# inorder(root)
-# print("\npreorder traversal:")
-# preorder(root)
-# print("\npostorder traversal:")
-# postorder(root)
-print("\nlevelorder traversal:")
-levelorder(root)
+insert(root, 7)
+print("inorder traversal:")
+inorder(root)
+print("\npreorder traversal:")
+preorder(root)
+print("\npostorder traversal:")
+postorder(root)
+# print("\nlevelorder traversal:")
+# levelorder(root)
